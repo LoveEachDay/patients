@@ -9,6 +9,7 @@ class Patient < ActiveRecord::Base
   validates :location_id, presence: true
 
   scope :onTreatment, -> {where(status: 'Treatment')}
+  scope :not_deleted, -> {where(deleted: false)}
 
   def full_name
     "#{last_name}, #{first_name} #{middle_name}"

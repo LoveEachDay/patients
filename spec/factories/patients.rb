@@ -9,5 +9,9 @@ FactoryGirl.define do
     association :location
     view_count 0
     deleted false
+
+    factory :invalid_patient do
+      first_name nil
+    end
   end
 end
