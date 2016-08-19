@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819133336) do
+ActiveRecord::Schema.define(version: 20160819141536) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name",       null: false
@@ -19,5 +19,21 @@ ActiveRecord::Schema.define(version: 20160819133336) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "first_name",    limit: 30,                           null: false
+    t.string   "middle_name",   limit: 10
+    t.string   "last_name",     limit: 30,                           null: false
+    t.date     "date_of_birth"
+    t.string   "gender",                   default: "Not available"
+    t.string   "status",                   default: "Initial",       null: false
+    t.integer  "location_id"
+    t.integer  "view_count",               default: 0
+    t.boolean  "deleted",                  default: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+  end
+
+  add_index "patients", ["location_id"], name: "index_patients_on_location_id"
 
 end
