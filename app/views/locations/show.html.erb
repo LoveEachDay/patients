@@ -1,0 +1,20 @@
+<p>
+  <strong>Location Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Location Code:</strong>
+  <%= @location.code %>
+</p>
+
+<p>
+  <strong>Patient Lists:</strong>
+  <ol>
+    <% @location.patients.each do |patient| %>
+      <li><%= link_to patient.full_name, patient_path(patient) %></li>
+    <% end %>
+  </ol>
+</p>
+
+<%= link_to 'Back', patients_path %>

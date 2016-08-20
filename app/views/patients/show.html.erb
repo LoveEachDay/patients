@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @patient.first_name %>
+  <strong>MR:</strong>
+  <%= @patient.medical_record_number %>
 </p>
 
 <p>
-  <strong>Middle name:</strong>
-  <%= @patient.middle_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @patient.last_name %>
+  <strong>Fullname:</strong>
+  <%= @patient.full_name %>
 </p>
 
 <p>
@@ -32,17 +27,12 @@
 
 <p>
   <strong>Location:</strong>
-  <%= @patient.location %>
+  <%= @patient.location.name %>
 </p>
 
 <p>
   <strong>View count:</strong>
   <%= @patient.view_count %>
-</p>
-
-<p>
-  <strong>Deleted:</strong>
-  <%= @patient.deleted %>
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |

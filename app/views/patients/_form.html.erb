@@ -29,23 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <%= f.select :gender, choices_for_gender %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, choices_for_status %>
   </div>
   <div class="field">
     <%= f.label :location_id %><br>
-    <%= f.text_field :location_id %>
-  </div>
-  <div class="field">
-    <%= f.label :view_count %><br>
-    <%= f.number_field :view_count %>
-  </div>
-  <div class="field">
-    <%= f.label :deleted %><br>
-    <%= f.check_box :deleted %>
+    <%= f.select :location_id, choices_for_location %>
   </div>
   <div class="actions">
     <%= f.submit %>

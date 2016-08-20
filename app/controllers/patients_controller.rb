@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
   before_action :is_patient_deleted, only: [:show, :edit, :update, :destroy]
+  before_action :increment_view_count, only: [:show]
 
   # GET /patients
   # GET /patients.json
@@ -72,6 +73,10 @@ class PatientsController < ApplicationController
       if @patient.deleted?
         redirect_to patients_url and return false
       end
+    end
+
+    def increment_view_count
+      Patient.increment_counter(:view_count, @patient)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
