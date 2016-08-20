@@ -1,0 +1,105 @@
+zh:
+  patient_creation_succeed: '病人资料成功创建了。'
+  patient_update_succeed: '病人资料成功更新了。'
+  patient_marked_delete: '病人资料成功删除了。'
+  patient:
+    status:
+      Initial: '初始'
+      Referred: '转诊'
+      Treatment: '治疗'
+      Closed: '治疗结束'
+    gender:
+      'Not available': '不详'
+      Male: '男'
+      Female: '女'
+  date:
+    month_names:
+      - 一月
+      - 二月
+      - 三月
+      - 四月
+      - 五月
+      - 六月
+      - 七月
+      - 八月
+      - 九月
+      - 十月
+      - 十一月
+      - 十二月
+    order:
+      - :year
+      - :month
+      - :day
+  layouts:
+    application:
+      title: '病人记录'
+  patients:
+    index:
+      title_html: '病人列表'
+      mr_html: '病人记录编号'
+      name_html: '姓名'
+      age_html: '年龄'
+      gender_html: '性别'
+      status_html: '状态'
+      location_html: '位置'
+      view_count_html: '浏览次数'
+      show: '查看'
+      edit: '编辑'
+      destroy: '删除'
+      destroy_confirmation: '你确定要删除吗？'
+      new: '新建病人'
+    new:
+      new_title: '新建病人'
+      back: '返回'
+    edit:
+      edit_title: '编辑病人'
+      show: '查看'
+      back: '返回'
+    form:
+      first_name: '名'
+      middle_name: '中间名'
+      last_name: '姓'
+      birthday: '出生日期'
+      gender: '性别'
+      status: '状态'
+      location: '位置'
+      submit: '提交'
+      error: '出错了！'
+    show:
+      mr: '病人记录编号'
+      name: '姓名'
+      birhday: '出生日期'
+      gender: '性别'
+      status: '状态'
+      location: '位置'
+      view_count: '浏览次数'
+      edit: '编辑'
+      back: '返回'
+
+  locations:
+    show:
+      name: '位置名称'
+      code: '位置编号'
+      patient_list: '病人列表'
+      back: '返回'
+
+  activerecord:
+    errors:
+      messages:
+        blank: '不能为空'
+        too_long: '太长了'
+    models:
+      patient: '病人'
+      location: '位置'
+    attributes:
+      patient:
+        first_name: '名'
+        middle_name: '中间名'
+        last_name: '姓'
+        date_of_birth: '出生日期'
+        gender: '性别'
+        stauts: '状态'
+        location_id: '位置'
+      location:
+        name: '名称'
+        code: '编号'

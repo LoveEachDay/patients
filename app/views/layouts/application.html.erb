@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Patients</title>
+  <title><%= t('.title') %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id='banner'>
+  <%= form_tag patients_path, class: 'locale', method: 'get' do %>
+    <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
+    <%= submit_tag 'submit' %>
+    <%= javascript_tag "$('.locale input').hide()" %>
+  <% end %>
+</div>
 <%= yield %>
 
 </body>

@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>MR:</strong>
+  <strong><%= t('.mr') %>:</strong>
   <%= @patient.medical_record_number %>
 </p>
 
 <p>
-  <strong>Fullname:</strong>
+  <strong><%= t('.name') %>:</strong>
   <%= @patient.full_name %>
 </p>
 
 <p>
-  <strong>Date of birth:</strong>
+  <strong><%= t('.birthday') %>:</strong>
   <%= @patient.date_of_birth %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
-  <%= @patient.gender %>
+  <strong><%= t('.gender') %>:</strong>
+  <%= t("patient.gender.#{@patient.gender}") %>
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @patient.status %>
+  <strong><%= t('.status') %>:</strong>
+  <%= t("patient.status.#{@patient.status}") %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong><%= t('.location') %>:</strong>
   <%= @patient.location.name %>
 </p>
 
 <p>
-  <strong>View count:</strong>
+  <strong><%= t('.view_count') %>:</strong>
   <%= @patient.view_count %>
 </p>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to t('.edit'), edit_patient_path(@patient) %> |
+<%= link_to t('.back'), patients_path %>

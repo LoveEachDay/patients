@@ -1,15 +1,15 @@
 <p>
-  <strong>Location Name:</strong>
+  <strong><%= t('.name') %>:</strong>
   <%= @location.name %>
 </p>
 
 <p>
-  <strong>Location Code:</strong>
+  <strong><%= t('.code') %>:</strong>
   <%= @location.code %>
 </p>
 
 <p>
-  <strong>Patient Lists:</strong>
+  <strong><%= t('.patient_list') %>:</strong>
   <ol>
     <% @location.patients.each do |patient| %>
       <li><%= link_to patient.full_name, patient_path(patient) %></li>
@@ -17,4 +17,4 @@
   </ol>
 </p>
 
-<%= link_to 'Back', patients_path %>
+<%= link_to t('.back'), root_path %>

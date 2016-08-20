@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :locations, only: [:show]
-
-  resources :patients
+  scope '(:locale)' do
+    resources :locations, only: [:show]
+    resources :patients
+    root 'patients#index'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

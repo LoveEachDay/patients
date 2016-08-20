@@ -1,23 +1,57 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  patient_creation_succeed: 'Patient was successfully created.'
+  patient_update_succeed: 'Patient was successfully updated.'
+  patient_marked_delete: "Patient was successfully deleted."
+  layouts:
+    application:
+      title: '病人记录'
+  patients:
+    index:
+      title_html: 'Listing Patients'
+      mr_html: 'MR'
+      name_html: 'Fullname'
+      age_html: 'Age'
+      gender_html: 'Gender'
+      status_html: 'Status'
+      location_html: 'Location'
+      view_count_html: 'View Count'
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Delete'
+      destroy_confirmation: 'Are you sure?'
+      new: 'New Patient'
+    new:
+      new_title: 'New Patient'
+      back: 'Back'
+    form:
+      first_name: 'First Name'
+      middle_name: 'Middle Name'
+      last_name: 'Last Name'
+      birthday: 'Date of Birth'
+      gender: 'Gender'
+      status: 'Status'
+      location: 'Location'
+      submit: 'Submit'
+    edit:
+      edit_title: 'Editing Patient'
+      show: 'Show'
+      back: 'Back'
+    show:
+      mr: 'MR'
+      name: 'Fullname'
+      birhday: 'Date of Birth'
+      gender: 'Gender'
+      status: 'Status'
+      location: 'Location'
+      view_count: 'View Count'
+      edit: 'Edit'
+      back: 'Back'
+
+  locations:
+    show:
+      name: 'Location Name'
+      code: 'Location Code'
+      patient_list: 'Patients List'
+      back: 'Back'
+
+

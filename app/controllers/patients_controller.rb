@@ -6,7 +6,11 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.not_deleted
+    if params[:set_locale]
+      redirect_to patients_url(locale: params[:set_locale])
+    else
+      @patients = Patient.not_deleted
+    end
   end
 
   # GET /patients/1
@@ -30,7 +34,7 @@ class PatientsController < ApplicationController
 
     respond_to do |format|
       if @patient.save
-        format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
+        format.html { redirect_to @patient, notice: I18n.t('patient_creation_succeed') }
         format.json { render :show, status: :created, location: @patient }
       else
         format.html { render :new }
@@ -44,7 +48,7 @@ class PatientsController < ApplicationController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+        format.html { redirect_to @patient, notice: I18n.t('patient_update_succeed') }
         format.json { render :show, status: :ok, location: @patient }
       else
         format.html { render :edit }
@@ -58,7 +62,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient.update_attributes(deleted: true)
     respond_to do |format|
-      format.html { redirect_to patients_url, notice: 'Patient was marked as deleted.' }
+      format.html { redirect_to patients_url, notice: I18n.t('patient_marked_delete') }
       format.json { head :no_content }
     end
   end
