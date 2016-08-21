@@ -4,7 +4,7 @@ en:
   patient_marked_delete: "Patient was successfully deleted."
   layouts:
     application:
-      title: '病人记录'
+      title: 'Patients'
   patients:
     index:
       title_html: 'Listing Patients'
